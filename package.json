@@ -19,7 +19,6 @@
   "homepage": "https://github.com/ianisms/ianisms-triviaapp#readme",
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^1.2.0",
-    "archiver": "^3.0.0",
     "body-parser": "^1.18.3",
     "botbuilder": "^3.11.0",
     "botbuilder-teams": "^0.1.6",
@@ -39,9 +38,5 @@
     "pug": "^2.0.0-rc.4",
     "replace-in-file": "^3.4.2"
   },
-  "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-zip": "^4.0.0"
-  }
+  "devDependencies": {}
 }
