@@ -1,0 +1,9 @@
+{
+    "app": {
+        "port":"3333"
+    },
+    "bot": {
+        "microsoftAppId": "<YOUR APP ID>",
+        "microsoftAppPassword": "<YOUR APP PWD>"
+    }
+}

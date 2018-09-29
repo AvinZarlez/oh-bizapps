@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+  div(class='font-semibold font-title') Leaderboard
+  p
+    div
+      label(for='leaderboardChoice')
+      | Select the leaderboard you would like to see:
+      | 
+      select#leaderboardChoice(name='leaderboardChoice')
+        option(value='NONE') Please make a choice:
+        option(value='team') Team
+        option(value='user') User
