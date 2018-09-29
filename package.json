@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/ianisms/ianisms-triviaapp#readme",
   "dependencies": {
-    "@microsoft/microsoft-graph-client": "^1.2.0",
     "body-parser": "^1.18.3",
     "botbuilder": "^3.11.0",
     "botbuilder-teams": "^0.1.6",
