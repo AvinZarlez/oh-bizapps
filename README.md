@@ -12,7 +12,7 @@ Register an app via https://apps.dev.microsoft.com.  Add User.Read Graph permisi
 
 ### Step 3
 
-Edit config/default.json and set microsoftAppId, microsoftAppPassword to the App Id and App Password from Step 2.
+Edit config/default.json and set ```microsoftAppId```, ```microsoftAppPassword``` to the App Id and App Password from Step 2.
 
 ### Step 4
 
