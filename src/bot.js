@@ -154,8 +154,8 @@ module.exports.setup = function(app) {
         // It is a bad idea to store secrets in config files. We try to read the settings from
         // the environment variables first, and fallback to the config file.
         // See node config module on how to create config files correctly per NODE environment
-        appId: process.env.MICROSOFT_APP_ID || botConfig.microsoftAppId,
-        appPassword: process.env.MICROSOFT_APP_PASSWORD || botConfig.microsoftAppPassword
+        appId: botConfig.microsoftAppId,
+        appPassword: botConfig.microsoftAppPassword
     });
     
     inMemoryBotStorage = new builder.MemoryBotStorage();

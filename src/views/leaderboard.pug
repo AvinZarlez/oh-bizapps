@@ -2,6 +2,7 @@ extends layout.pug
 block styles
     link(rel='stylesheet', type='text/css', href='/styles/leaderboard.css')
 block scripts
+    script(src='/scripts/graphclient.js')    
     script(src='/scripts/leaderboard.js')
 
 block content
@@ -10,3 +11,5 @@ block content
         div#leaderboard loading...
     p
         div#tcontext loading...
+    p
+        div#authmsg loading...

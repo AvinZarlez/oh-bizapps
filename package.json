@@ -4,7 +4,7 @@
   "description": "Microsoft Teams Trivia App.",
   "scripts": {
     "ngrok": "node src/ngrok.js",
-    "start": "node src/app.js",
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,15 +18,25 @@
   },
   "homepage": "https://github.com/ianisms/ianisms-triviaapp#readme",
   "dependencies": {
-    "botbuilder": "^4.0.6",
-    "botbuilder-teams": "^1.0.0",
-    "config": "^1.28.1",
-    "express": "^4.16.2",
+    "@microsoft/microsoft-graph-client": "^1.2.0",
+    "body-parser": "^1.18.3",
+    "botbuilder": "^3.11.0",
+    "botbuilder-teams": "^0.2.1",
+    "config": "^1.31.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "faker": "^4.1.0",
+    "fs": "0.0.1-security",
     "jszip": "^3.1.5",
+    "method-override": "^3.0.0",
     "ngrok": "^3.1.0",
     "node-fetch": "^2.2.0",
-    "pug": "^2.0.0-rc.4",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-azure-ad": "^4.0.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
     "replace-in-file": "^3.4.2"
   },
   "devDependencies": {}

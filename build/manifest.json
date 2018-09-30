@@ -26,13 +26,13 @@
     "staticTabs": [{
         "entityId": "ianisms.triviabotleaderboardtab",
         "name": "Leaderboard Tab",
-        "contentUrl": "https://9069ce3d.ngrok.io/leaderboard",
+        "contentUrl": "https://3af8aa76.ngrok.io/leaderboard",
         "scopes": [
             "personal"
         ]
     }],
     "configurableTabs": [{
-        "configurationUrl": "https://9069ce3d.ngrok.io/configure",
+        "configurationUrl": "https://3af8aa76.ngrok.io/configure",
         "canUpdateConfiguration": true,
         "scopes": [
             "team"
