@@ -56,7 +56,7 @@ module.exports.setup = function(app) {
                 }
             });
         let data = await resp.arrayBuffer();
-        let img = new Buffer(data, 'base64');
+        let img = Buffer.from(data, 'base64');
         res.contentType('image/jpeg');
         res.send(img);
     });
