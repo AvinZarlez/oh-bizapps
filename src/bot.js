@@ -1,9 +1,9 @@
 'use strict';
 
-const builder = require('botbuilder');
-const teams = require('botbuilder-teams');
-const config = require('config');
-const fetch = require('node-fetch');
+let builder = require('botbuilder');
+let teams = require('botbuilder-teams');
+let config = require('config');
+let fetch = require('node-fetch');
 
 let botConfig = config.get('bot');
 let connector = null;
@@ -148,7 +148,7 @@ function submitAnswer() {
     }  
 }
 
-module.exports.setup = function(app) {    
+module.exports.setup = (app) => {    
     // Create a connector to handle the conversations
     connector = new teams.TeamsChatConnector({
         // It is a bad idea to store secrets in config files. We try to read the settings from
@@ -161,7 +161,7 @@ module.exports.setup = function(app) {
     inMemoryBotStorage = new builder.MemoryBotStorage();
     
     // Define a simple bot with the above connector that echoes what it received
-    bot = new builder.UniversalBot(connector, function(newSession) {
+    bot = new builder.UniversalBot(connector, (newSession) => {
         // Message might contain @mentions which we would like to strip off in the response
         session = newSession;
         let text = teams.TeamsMessage.getTextWithoutMentions(session.message);
