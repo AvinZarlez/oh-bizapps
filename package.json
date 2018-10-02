@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charlesprakash/msteams-nodejs-hello-world.git"
+    "url": "git+https://github.com/ianisms/oh-bizapps.git"
   },
   "author": "Ian N. Bennett",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ianisms/ianisms-triviaapp"
+    "url": "https://github.com/ianisms/oh-bizapps"
   },
-  "homepage": "https://github.com/ianisms/ianisms-triviaapp#readme",
+  "homepage": "https://github.com/ianisms/oh-bizapps#readme",
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^1.2.0",
     "body-parser": "^1.18.3",
