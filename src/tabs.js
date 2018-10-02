@@ -17,6 +17,20 @@ module.exports.setup = function(app) {
         res.render('configure');   
     });
 
+    // MUST CONSENT FIRST:
+    /*https://login.microsoftonline.com/OTAProd59ops.onmicrosoft.com/adminconsent?
+client_id=da78a0bf-5153-4fc3-94ae-1395dcc85ad0
+&state=12345
+&redirect_uri=http://localhost/myapp/permissions*/
+    // MUST GET AN APP TOKEN NEXT
+    /*
+    https://login.microsoftonline.com/OTAProd59ops.onmicrosoft.com/oauth2/v2.0/token
+    body:
+    client_id=da78a0bf-5153-4fc3-94ae-1395dcc85ad0
+&scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read.All
+&client_secret=uwjhe2227-@ygBSBJSAY7%*
+&grant_type=client_credentials
+    */
     app.get('/photo', async function(req, res) {
         let resp = await fetch(
             `https://graph.microsoft.com/v1.0/users/${req.query.userId}/photo/$value?size=48x48`,
