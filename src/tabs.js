@@ -1,5 +1,6 @@
 'use strict';
 
+let config = require('config');
 let path = require('path');
 let express = require('express');
 let fetch = require('node-fetch');
@@ -19,25 +20,39 @@ module.exports.setup = function(app) {
 
     // MUST CONSENT FIRST:
     /*https://login.microsoftonline.com/OTAProd59ops.onmicrosoft.com/adminconsent?
-client_id=da78a0bf-5153-4fc3-94ae-1395dcc85ad0
-&state=12345
-&redirect_uri=http://localhost/myapp/permissions*/
+    client_id=<APP ID>
+    &state=12345
+    &redirect_uri=<CONFIGURED IN APP>*/
     // MUST GET AN APP TOKEN NEXT
     /*
     https://login.microsoftonline.com/OTAProd59ops.onmicrosoft.com/oauth2/v2.0/token
     body:
-    client_id=da78a0bf-5153-4fc3-94ae-1395dcc85ad0
-&scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read.All
-&client_secret=uwjhe2227-@ygBSBJSAY7%*
-&grant_type=client_credentials
+    client_id=<APP ID>
+    &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
+    &client_secret=<APP PASSWORD>
+    &grant_type=client_credentials
     */
-    app.get('/photo', async function(req, res) {
+   //USE APP TOKEN BELOW
+    app.get('/photo', async (req, res) => {
+        let authResp = await fetch(
+            `https://login.microsoftonline.com/${config.app.microsoftAppTenantId}/oauth2/v2.0/token`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `client_id=${config.app.microsoftAppId}
+                &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
+                &client_secret=${config.app.microsoftAppPassword}
+                &grant_type=client_credentials`
+            });
+        let tokendata = await authResp.json();
         let resp = await fetch(
             `https://graph.microsoft.com/v1.0/users/${req.query.userId}/photo/$value?size=48x48`,
             {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'Bearer ' + req.query.accessToken,
+                    'Authorization': 'Bearer ' + tokendata.access_token,
                 }
             });
         let data = await resp.arrayBuffer();

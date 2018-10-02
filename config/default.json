@@ -1,6 +1,9 @@
 {
     "app": {
-        "port":"3333"
+        "port":"3333",
+        "microsoftAppTenantId": "OTAProd59ops.onmicrosoft.com",
+        "microsoftAppId": "da78a0bf-5153-4fc3-94ae-1395dcc85ad0",
+        "microsoftAppPassword": "uwjhe2227-@ygBSBJSAY7%*"
     },
     "bot": {
         "microsoftAppId": "14d300e6-3836-4d68-aaca-c57198f07bc4",

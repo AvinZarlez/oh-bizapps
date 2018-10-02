@@ -23,19 +23,16 @@
 
                 if(leaderboardChoice === 'user') {
                     leaderBoardTable.append('<tr><th>Photo:</th><th>Name:</th><th>Score:</th></tr');
-                    if (userToken != null)
-                    {        
-                        leaderboardElm.append(`<div><code>${JSON.stringify(leaderboard)}</code></div>`)
-                        leaderboard.forEach(entry => { 
-                            leaderBoardTable.append(
-                                '<tr>'+
-                                `<td><img src="/photo/?userId=${entry.id}&accessToken=${userToken.accessToken}" width="48"/></td>`+
-                                '<td>' + entry.name + '</td>'+
-                                '<td>' + entry.score + '</td>'+
-                                '</tr>'                                          
-                            ) 
-                        }); 
-                    } 
+                    leaderboardElm.append(`<div><code>${JSON.stringify(leaderboard)}</code></div>`)
+                    leaderboard.forEach(entry => { 
+                        leaderBoardTable.append(
+                            '<tr>'+
+                            `<td><img src="/photo/?userId=${entry.id}" width="48"/></td>`+
+                            '<td>' + entry.name + '</td>'+
+                            '<td>' + entry.score + '</td>'+
+                            '</tr>'                                          
+                        ) 
+                    }); 
                 } else {                    
                     leaderBoardTable.append('<tr><th>Photo:</th><th>Name:</th><th>Score:</th></tr');
                     leaderboard.forEach(entry => {       
@@ -72,8 +69,10 @@
                     tcontextElm.html('<CODE>' + JSON.stringify(context) + '</CODE>');
                 }
 
-                if(leaderboardChoice === 'user') {
-                    if (userToken == null)
+                if(leaderboardChoice === 'user') {                    
+                    loadLeaderboard(leaderboardChoice, context);
+                    // NO LONGER NEEDED
+                    /*if (userToken == null)
                     {
                         microsoftTeams.authentication.authenticate({
                             url: '/auth',
@@ -90,7 +89,7 @@
                         });
                     } else {
                         loadLeaderboard(leaderboardChoice, context);
-                    }
+                    }*/
                 } else {      
                     loadLeaderboard(leaderboardChoice, context);
                 }
