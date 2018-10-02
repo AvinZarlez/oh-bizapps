@@ -10,7 +10,8 @@ async function run() {
 
         console.error('ngrok uri: ', ngrokUri);
 
-
+        // Ensure there is a build folder to copy to
+        fs.mkdir('./build/', function (err) {}); 
         fs.copyFileSync('./src/manifest.json', './build/manifest.json')
         let changes = await replace({
             files: './build/manifest.json',
