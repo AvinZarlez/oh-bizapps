@@ -34,7 +34,7 @@
                         ) 
                     }); 
                 } else {                    
-                    leaderBoardTable.append('<tr><th>Photo:</th><th>Name:</th><th>Score:</th></tr');
+                    leaderBoardTable.append('<tr><th>Name:</th><th>Score:</th></tr');
                     leaderboard.forEach(entry => {       
                         leaderBoardTable.append(
                             '<tr>'+
