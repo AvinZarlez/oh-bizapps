@@ -14,7 +14,7 @@ module.exports.setup = function(app) {
     app.set('view engine', 'pug');
     app.set('views', path.join(__dirname, 'views'));
     
-    app.get('/configure', function(req, res) {
+    app.get('/configure', (req, res) => {
         res.render('configure');   
     });
 
@@ -61,15 +61,15 @@ module.exports.setup = function(app) {
         res.send(img);
     });
 
-    app.get('/auth', function(req, res) {
+    app.get('/auth', (req, res) => {
         res.render('auth');   
     });
 
-    app.get('/auth-end', function(req, res) {
+    app.get('/auth-end', (req, res) => {
         res.render('auth-end');   
     });
 
-    app.get('/leaderboard', function(req, res) {
+    app.get('/leaderboard', (req, res) => {
         res.render('leaderboard');
     }); 
 };
